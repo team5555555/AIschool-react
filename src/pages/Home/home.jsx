@@ -1,11 +1,12 @@
 import React from 'react'
 import Header from '@layouts/header/FixedHeader';
-import footer from '@layouts/footer/FixedFooter';
+import Footer from '@layouts/footer/FixedFooter';
 
 const home = () => {
     return (
         <>
             <Header/>
+            <Footer/>
         </>
     )
 }
