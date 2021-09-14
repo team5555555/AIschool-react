@@ -5,7 +5,7 @@ import footer from '@layouts/footer/FixedFooter';
 const home = () => {
     return (
         <>
-            <header/>
+            <Header/>
         </>
     )
 }
