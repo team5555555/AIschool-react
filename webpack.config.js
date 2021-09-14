@@ -7,7 +7,14 @@ module.exports = {
     mode : 'development', // 실서비스 : production
     devtool : 'eval', // hidden-source-map
     resolve : {
-        extensions:['.js','.jsx']
+        extensions:['.js','.jsx'],
+        alias:{
+            '@hooks':path.resolve(`${__dirname}\\src`,'hooks'),
+            '@components':path.resolve(`${__dirname}\\src`,'components'),
+            '@layouts':path.resolve(`${__dirname}\\src`,'layouts'),
+            '@pages':path.resolve(`${__dirname}\\src`,'pages'),
+            '@utils':path.resolve(`${__dirname}\\src`,'utils'),
+        }
     }, // 확장자
 
     entry :{
