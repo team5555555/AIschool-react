@@ -3,16 +3,16 @@ import loadable from '@loadable/component';
 
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-// import Footer from '@'
-// const Footer = loadable(()=>import('@'))
+// import Home from '@pages/Home/home'
+const Home = loadable(() => import('@pages/Home/home'));
+
 
 
 const App = () => {
     return (
         <Switch> 
-            <div>
-                test
-            </div>    
+            {/* <Redirect exact path = '/' to = '/home'/> */}
+            <Route path='/' component={Home}/>
         </Switch>
         
     )
