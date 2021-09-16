@@ -4,7 +4,7 @@ import loadable from '@loadable/component';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 // import Home from '@pages/Home/home'
-const Home = loadable(() => import('@pages/Home/home'));
+const Home = loadable(() => import('@layouts/Home'));
 
 
 

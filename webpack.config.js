@@ -1,13 +1,16 @@
 const path = require('path');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const webpack = require('webpack');
-const RefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
-module.exports = {
+const isDevelopment = process.env.NODE_ENV !== 'production';
+
+const config = {
     name : 'AIschool-react',
-    mode : 'development', // 실서비스 : production
-    devtool : 'eval', // hidden-source-map
-    resolve : {
-        extensions:['.js','.jsx'],
+    mode: isDevelopment ? 'development' : 'production',
+    devtool: isDevelopment ? 'hidden-source-map' : 'inline-source-map',
+    resolve: {  
+      extensions: ['.js', '.jsx', '.json'],
         alias:{
             '@hooks':path.resolve(`${__dirname}\\src`,'hooks'),
             '@components':path.resolve(`${__dirname}\\src`,'components'),
@@ -17,43 +20,58 @@ module.exports = {
         }
     }, // 확장자
 
-    entry :{
-        app : './client'
-    }, // 입력
-
-    module : {
-        rules : [{
+    entry: {
+        app: './client',
+      },
+      module: {
+        rules: [
+          {
             test: /\.jsx?$/,
-            loader : 'babel-loader',
-            options : {
-                presets:[['@babel/preset-env',{
-                    targets : {
-                        browsers:['> 1% in KR'],
-                    },
-                    debug: true,
-                }],
-                '@babel/preset-react'
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                [
+                  '@babel/preset-env',
+                  {
+                    targets: { browsers: ['last 2 chrome versions'] },
+                    debug: isDevelopment,
+                  },
                 ],
-                plugins:[
-                    //'@babel/plugin-proposal-class-properties',
-                    'react-refresh/babel'
-                    
-                ], // 최소한으로 하자 빌드할때 오래걸림
-            }
-        }]
-    },
-    plugins:[
-        new RefreshWebpackPlugin()
-    ],
-    output:{
-        path: path.join(__dirname,'dist'), //  실제주소 . C:\..
-        filename: 'app.js',
-        publicPath:'/dist/',
-    }, // 출력
-
-    devServer:{
-        publicPath:'/dist/',
-        hot:true,
-        
-    },
-};
+                '@babel/preset-react',
+              ],
+              env: {
+                development: {
+                  plugins: [require.resolve('react-refresh/babel')],
+                },
+              },
+            },
+            exclude: path.join(__dirname, 'node_modules'),
+          },
+          {
+            test: /\.css?$/,
+            use: ['style-loader', 'css-loader'],
+          },
+        ],
+      },
+      plugins: [new webpack.EnvironmentPlugin({ NODE_ENV: isDevelopment ? 'development' : 'production' })],
+      output: {
+        path: path.join(__dirname, 'dist'),
+        filename: '[name].js',
+        publicPath: '/dist/',
+      },
+      devServer: {
+        historyApiFallback: true,
+        port: 3090,
+        devMiddleware: { publicPath: '/dist/' },
+        static: { directory: path.resolve(__dirname) },
+      },
+    };
+    
+    if (isDevelopment && config.plugins) {
+      config.plugins.push(new webpack.HotModuleReplacementPlugin());
+      config.plugins.push(new ReactRefreshWebpackPlugin());
+    }
+    if (!isDevelopment && config.plugins) {
+    }
+    
+    module.exports = config;
