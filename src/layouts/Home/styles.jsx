@@ -124,43 +124,43 @@ export const Header = styled.header`
 `;
 
 export const Footer = styled.footer`
-  position: absolute;
-  width: 100%;
-  height: 95px;
-  bottom: 0;
-
-  .F_container {
-    position: fixed;
+  #footer {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 95px;
+  }
+  #footer .F_container {
+    position: absolute;
     background-color: #88d9c3;
     width: 100%;
     height: 95px;
     bottom: 0;
   }
-  .left {
+  #footer .left {
     position: absolute;
     display: inline-block;
     height: 100%;
     margin-left: 50px;
   }
-  .left img {
+  #footer .left img {
     height: 100%;
   }
-  .right {
+  #footer .right {
     display: inline-block;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 5px;
   }
-  .right .right_top {
+  #footer .right .right_top {
     text-align: right;
     margin-left: 54%;
     margin-right: 20px;
   }
-  .right .right_top ul {
-  }
-  .right .right_top ul li {
+
+  #footer .right .right_top ul li {
     display: inline-block;
   }
-  .right .right_top ul li:before {
+  #footer .right .right_top ul li:before {
     display: inline-block;
     content: '';
     width: 1px;
@@ -169,21 +169,20 @@ export const Footer = styled.footer`
     margin: 0 8px;
     vertical-align: -3px;
   }
-  .right .right_top ul li:nth-child(1):before,
-  .right .right_top ul li:nth-child(5):before {
+  #footer .right .right_top ul li:nth-child(1):before,
+  #footer .right .right_top ul li:nth-child(5):before {
     content: none;
   }
-  .right .right_bottom {
+  #footer .right .right_bottom {
     text-align: right;
     margin-left: 54%;
     margin-right: 20px;
   }
-  .right .right_bottom ul {
-  }
-  .right .right_bottom ul li {
+
+  #footer .right .right_bottom ul li {
     display: inline-block;
   }
-  .right .right_bottom ul li:before {
+  #footer .right .right_bottom ul li:before {
     display: inline-block;
     content: '';
     width: 1px;
@@ -192,13 +191,18 @@ export const Footer = styled.footer`
     margin: 0 8px;
     vertical-align: -3px;
   }
-  .right .right_bottom ul li:nth-child(1):before,
-  .right .right_bottom ul li:nth-child(3):before {
+  #footer .right .right_bottom ul li:nth-child(1):before,
+  #footer .right .right_bottom ul li:nth-child(3):before {
     content: none;
   }
 `;
 
 export const Main = styled.main`
+  display: flex;
+  margin-top: auto;
+  flex-direction: column;
+
+  /* overflow: hidden; */
   #main {
     width: 100%;
     position: relative;

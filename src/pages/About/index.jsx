@@ -2,12 +2,14 @@ import React from 'react';
 import { Main } from '@pages/About/styles';
 import { Link, Switch, Route, Redirect } from 'react-router-dom';
 
-import loadable from '@loadable/component';
+// import loadable from '@loadable/component';
 
-const AboutSol = loadable(() => import('@pages/AboutSol'));
-const AboutSche = loadable(() => import('@pages/AboutSche'));
+// const AboutSol = loadable(() => import('@pages/AboutSol'));
+// const AboutSche = loadable(() => import('@pages/AboutSche'));
 
 const About = () => {
+  const [height, setHeight] = useState(100);
+
   return (
     <Main>
       <main role="main" id="main" class="main">

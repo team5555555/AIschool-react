@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 const AboutSol = () => {
   return (
     <>
-      {' '}
       <Main>
         <main role="main" id="main" class="main">
           <div class="about_bg">
@@ -17,23 +16,25 @@ const AboutSol = () => {
               <div class="nav_right">
                 <ul>
                   <li>
-                    <Link to="about">YOUTH the YOUTH</Link>
+                    <Link to="/about" className="hvr-grow">
+                      YOUTH the YOUTH
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/aboutsol" class="active">
+                    <Link to="/aboutsol" className="hvr-grow">
                       SOLUTION
                     </Link>
                   </li>
                   <li>
-                    <Link to="/aboutsche">SCHEDULE</Link>
+                    <Link to="/aboutsche" className="hvr-grow">
+                      SCHEDULE
+                    </Link>
                   </li>
                 </ul>
               </div>
             </div>
 
             <div class="A_YTY">
-              <img src="https://via.placeholder.com/1000x500" />
-              <img src="https://via.placeholder.com/1000x500" />
               <img src="https://via.placeholder.com/1000x500" />
             </div>
           </div>

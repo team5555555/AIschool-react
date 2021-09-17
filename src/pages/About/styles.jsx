@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const Main = styled.main`
   /* about */
-
+  margin-top: auto;
   .about_bg {
     position: relative;
     background-color: #ffffff;
@@ -13,7 +13,7 @@ export const Main = styled.main`
     position: fixed;
     width: 100%;
     height: 100px;
-    background-color: #e2cb05;
+    background-color: #f2cb05;
     z-index: 10;
   }
   .nav .nav_left {

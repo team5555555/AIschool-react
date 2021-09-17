@@ -71,6 +71,7 @@ const Home = () => {
           </div>
         </header>
       </Header>
+
       <Main>
         <Switch>
           <Route path="/about" component={About}></Route>
@@ -79,30 +80,35 @@ const Home = () => {
           <Route path="/film" component={Film}></Route>
         </Switch>
       </Main>
+
       <Footer>
-        <div class="F_container">
-          <div class="left">{/* <img src="img/logo_E_1.jpg"> */}</div>
-          <div class="right">
-            <div class="right_top">
-              <ul>
-                <li>유스더유스</li>
-                <li>대표자명 : 김태완</li>
-                <li>
-                  사업자등록번호 : <a href="https://www.ftc.go.kr">687-51-00454</a>
-                </li>
-                <li>통신판매업번호 : 2020-</li>
-                <li>충남부여-0004</li>
-              </ul>
+        <footer id="footer">
+          <div class="F_container">
+            <div class="left">
+              <img src="https://github.com/team5555555/AIschool-web/blob/main/0916/img/footer_logo.jpg?raw=true" />
             </div>
-            <div class="right_bottom">
-              <ul>
-                <li>충청남도 부여군 부여읍 사비로 12번길 6-28 204호 (우 : 33167)</li>
-                <li>e-mail : six6200@naver.com</li>
-                <li>&copy; 2021 유스더유스 .All rights reserved.</li>
-              </ul>
+            <div class="right">
+              <div class="right_top">
+                <ul>
+                  <li>유스더유스</li>
+                  <li>대표자명 : 김태완</li>
+                  <li>
+                    사업자등록번호 : <a href="https://www.ftc.go.kr">687-51-00454</a>
+                  </li>
+                  <li>통신판매업번호 : 2020-</li>
+                  <li>충남부여-0004</li>
+                </ul>
+              </div>
+              <div class="right_bottom">
+                <ul>
+                  <li>충청남도 부여군 부여읍 사비로 12번길 6-28 204호 (우 : 33167)</li>
+                  <li>e-mail : six6200@naver.com</li>
+                  <li>&copy; 2021 유스더유스 .All rights reserved.</li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
+        </footer>
       </Footer>
     </>
   );
