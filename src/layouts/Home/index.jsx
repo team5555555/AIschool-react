@@ -1,40 +1,84 @@
 import React from 'react';
+import loadable from '@loadable/component';
 
-import { Header, Footer } from '@layouts/Home/styles';
+import { Header, Footer, Main } from '@layouts/Home/styles';
 import { Route, Switch } from 'react-router';
-import About from '@pages/About';
+import { Link } from 'react-router-dom';
+
+const About = loadable(() => import('@pages/About'));
+const AboutSche = loadable(() => import('@pages/AboutSche'));
+const AboutSol = loadable(() => import('@pages/AboutSol'));
+const Film = loadable(() => import('@pages/Film'));
 
 const Home = () => {
   return (
     <>
       <Header>
-        <div className="navbar_logo">
-          <img src="https://github.com/team5555555/AIschool-web/blob/main/Youth/img/logo_E_2.jpg?raw=true" alt="" />
-        </div>
-        <Switch>
-          <ul className="navbar_menu">
-            <li>
-              <a href="">About</a>
-            </li>
-            <li>
-              <a href="">Photography</a>
-            </li>
-            <li>
-              <a href="">Film</a>
-            </li>
-            <li>
-              <a href="">예상견적</a>
-            </li>
-            <li>
-              <a href="">견적문의</a>
-            </li>
-            <li>
-              <a href="">Contect</a>
-            </li>
-          </ul>
-        </Switch>
+        <header id="header">
+          <Link to="/">
+            <img src="https://github.com/team5555555/AIschool-web/blob/main/Youth/img/logo_E_2.jpg?raw=true" />
+          </Link>
+          <div class="lists">
+            <ul class="menu">
+              <li>
+                <Link to="/about" className="hvr-underline-from-center pop">
+                  About
+                </Link>
+                <ul class="sub_menu">
+                  <li>
+                    <Link to="/about" className="hvr-grow">
+                      YOUTH the YOUTH
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/aboutsol" className="hvr-grow">
+                      SOLUTION
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/aboutsche" className="hvr-grow">
+                      SCHEDULE
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <Link to="/photo" className="hvr-underline-from-center">
+                  Photography
+                </Link>
+              </li>
+              <li>
+                <Link to="/film" className="hvr-underline-from-center">
+                  Film
+                </Link>
+              </li>
+              <li>
+                <Link to="/estimate" className="hvr-underline-from-center">
+                  예상견적
+                </Link>
+              </li>
+              <li>
+                <Link to="/requestquota" className="hvr-underline-from-center">
+                  견적문의
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hvr-underline-from-center">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </header>
       </Header>
-
+      <Main>
+        <Switch>
+          <Route path="/about" component={About}></Route>
+          <Route path="/aboutsol" component={AboutSol}></Route>
+          <Route path="/aboutsche" component={AboutSche}></Route>
+          <Route path="/film" component={Film}></Route>
+        </Switch>
+      </Main>
       <Footer>
         <div class="F_container">
           <div class="left">{/* <img src="img/logo_E_1.jpg"> */}</div>
