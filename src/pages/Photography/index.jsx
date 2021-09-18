@@ -84,6 +84,7 @@ const Photo = () => {
                                         <div class="item_container">
                                             <img src="https://github.com/team5555555/AIschool-web/blob/main/0916/img/Photo%20%EB%A9%94%EB%89%B4%20%EC%97%90%EC%85%8B/1.png?raw=true"/>
                                             <img src="https://github.com/team5555555/AIschool-web/blob/main/0916/img/Photo%20%EB%A9%94%EB%89%B4%20%EC%97%90%EC%85%8B/2.png?raw=true"/>
+											<img src="https://github.com/team5555555/AIschool-web/blob/main/0916/img/Photo%20%EB%A9%94%EB%89%B4%20%EC%97%90%EC%85%8B/3.png?raw=true"/>
 
 
                                             
