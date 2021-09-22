@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Main } from '@pages/About/styles';
 import { Link, Switch, Route, Redirect } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ import { Link, Switch, Route, Redirect } from 'react-router-dom';
 // const AboutSche = loadable(() => import('@pages/AboutSche'));
 
 const About = () => {
-  const [height, setHeight] = useState(100);
+  // const [height, setHeight] = useState(100);
 
   return (
     <Main>
@@ -36,9 +36,9 @@ const About = () => {
           </div>
 
           <div class="A_YTY">
-            <img src="https://via.placeholder.com/1000x500" />
-            <img src="https://via.placeholder.com/1000x500" />
-            <img src="https://via.placeholder.com/1000x500" />
+            <img src="https://github.com/team5555555/AIschool-web/blob/main/0922/img/A_1.png?raw=true" />
+            <img src="https://github.com/team5555555/AIschool-web/blob/main/0922/img/A_2.png?raw=true" />
+            <img src="https://github.com/team5555555/AIschool-web/blob/main/0922/img/A_3.png?raw=true" />
           </div>
         </div>
       </main>

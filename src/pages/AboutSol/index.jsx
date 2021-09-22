@@ -35,7 +35,7 @@ const AboutSol = () => {
             </div>
 
             <div class="A_YTY">
-              <img src="https://via.placeholder.com/1000x500" />
+              <img src="https://github.com/team5555555/AIschool-web/blob/main/0922/img/A_4.png?raw=true" />
             </div>
           </div>
         </main>

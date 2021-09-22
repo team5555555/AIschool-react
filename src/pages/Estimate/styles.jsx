@@ -1,14 +1,6 @@
 import styled from '@emotion/styled';
 
 export const Main = styled.main`
-  .about_bg {
-    padding-bottom: 110px;
-  }
-  @media (max-width: 747px) {
-    .about_bg {
-      padding-bottom: 40px;
-    }
-  }
   * {
     margin: 0;
     padding: 0;
@@ -129,7 +121,7 @@ export const Main = styled.main`
   #main {
     width: 100%;
     position: relative;
-    /*background-color: #e2cb05;*/
+    /*background-color: #f2cb05;*/
     padding-top: 100px;
   }
   #main h4 {
@@ -224,7 +216,7 @@ export const Main = styled.main`
     position: fixed;
     width: 100%;
     height: 100px;
-    background-color: #e2cb05;
+    background-color: #f2cb05;
     z-index: 10;
   }
   .nav .nav_left {
@@ -299,7 +291,7 @@ export const Main = styled.main`
     position: fixed;
     width: 100%;
     height: 100px;
-    background-color: #e2cb05;
+    background-color: #f2cb05;
     z-index: 10;
   }
   #main .contact p {
@@ -584,5 +576,59 @@ export const Main = styled.main`
 
   .submit input {
     height: 30px;
+  }
+
+  /* Shutter Out Horizontal */
+  .hvr-shutter-out-horizontal {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    background: #f2f2f2;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+  .hvr-shutter-out-horizontal:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #88d9c3;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .hvr-shutter-out-horizontal:hover,
+  .hvr-shutter-out-horizontal:focus,
+  .hvr-shutter-out-horizontal:active {
+    color: white;
+  }
+  .hvr-shutter-out-horizontal:hover:before,
+  .hvr-shutter-out-horizontal:focus:before,
+  .hvr-shutter-out-horizontal:active:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+  .c_m_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .c_m_container #ExImg2 {
+    display: none;
   }
 `;

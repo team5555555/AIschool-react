@@ -9,16 +9,13 @@ const About = loadable(() => import('@pages/About'));
 const AboutSche = loadable(() => import('@pages/AboutSche'));
 const AboutSol = loadable(() => import('@pages/AboutSol'));
 const Film = loadable(() => import('@pages/Film'));
-const Common = loadable(() => import('@pages/Common'));
-const Estimate = loadable(() => import('@pages/Estimate'));
-const RequestQuotation = loadable(() => import('@pages/RequestQuotation'));
 
 const Home = () => {
   return (
     <>
       <Header>
         <header id="header">
-          <Link to="/index">
+          <Link to="/">
             <img src="https://github.com/team5555555/AIschool-web/blob/main/Youth%20-/img/logo_E_2.jpg?raw=true" />
           </Link>
           <div class="lists">
@@ -80,14 +77,9 @@ const Home = () => {
           <Route path="/about" component={About}></Route>
           <Route path="/aboutsol" component={AboutSol}></Route>
           <Route path="/aboutsche" component={AboutSche}></Route>
+          <Route path="/film" component={Film}></Route>
         </Switch>
       </Main>
-      <Switch>
-        <Route path="/index" component={Common}></Route>
-        <Route path="/film" component={Film}></Route>
-        <Route path="/estimate" component={Estimate}></Route>
-        <Route path="/requestquota" component={RequestQuotation}></Route>
-      </Switch>
 
       <Footer>
         <footer id="footer">

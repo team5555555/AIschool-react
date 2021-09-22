@@ -7,6 +7,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 const Home = loadable(() => import('@layouts/Home'));
 const About = loadable(() => import('@pages/About'));
 const Film = loadable(() => import('@pages/Film'));
+const Common = loadable(() => import('@pages/Common'));
 
 const App = () => {
   return (
